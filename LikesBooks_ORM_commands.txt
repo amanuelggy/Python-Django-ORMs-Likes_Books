@@ -1,0 +1,63 @@
+# Create 3 different user accounts
+User.objects.create(first_name = "Gemechis",last_name = "Tasisa", email = "gemechis@gmail.com")
+User.objects.create(first_name = "Kidi",last_name = "Niguse", email = "kidi@gmail.com")
+User.objects.create(first_name = "Falmi",last_name = "Mandefero", email = "falmi@gmail.com")
+
+# Have the first user create 2 books.
+user1 = User.objects.get(id = 1)
+user1.uploaded_books.create(name = "book1")
+user1.uploaded_books.create(name = "book2")
+
+# Have the second user create 2 other books.
+user2 = User.objects.get(id = 2)
+user2.uploaded_books.create(name = "book3")
+user2.uploaded_books.create(name = "book4")
+
+# Have the third user create 2 other books.
+user3 = User.objects.get(id = 3)
+user3.uploaded_books.create(name = "book5")
+user3.uploaded_books.create(name = "book6")
+
+# Have the first user like the last book and the first book
+user1.liked_books.first()  
+user1.liked_books.last() 'or'
+user1.liked_books.add(b1,b6) ,where b1 and b6 are instances of boo1 and book6 respectively 
+
+# Have the second user like the first book and the third book
+user2.liked_books.first()
+b3 = Book.objects.get(id=3)
+user2.liked_books.add(b3)
+
+# Have the third user like all books
+b1 = Book.objects.get(id=1)
+b2 = Book.objects.get(id=2
+b3 = Book.objects.get(id=3)
+b4 = Book.objects.get(id=4)
+b5 = Book.objects.get(id=5)
+b6 = Book.objects.get(id=6)
+user3.liked_books.add(b1,b2,b3,b4,b5,b6)
+
+# Display all users who like the first book 
+Book.objects.first().liked_users.all()
+
+# Display the user who uploaded the first book
+Book.objects.first().uploader
+
+# Display all users who like the second book
+Book.objects.get(id = 2).liked_users
+Book.objects.get(id = 2).uploader
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
